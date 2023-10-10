@@ -2,13 +2,12 @@
 
 import com.solacesystems.jcsmp.*;
 
-
-
+import java.io.IOException;
 
 
 public class Main {
 
-    public static void main(String... args) throws JCSMPException {
+    public static void main(String... args) throws JCSMPException, InterruptedException, IOException {
 
 
         final JCSMPProperties properties = new JCSMPProperties();
