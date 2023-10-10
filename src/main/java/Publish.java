@@ -1,5 +1,9 @@
+import Entity.DeathNotice;
+import com.google.gson.Gson;
 import com.solacesystems.jcsmp.*;
 
+import java.util.Date;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Publish {
@@ -29,9 +33,15 @@ public class Publish {
         System.out.println("Enter text here to Mock Events, every new line will be a new Event!");
 
         while(true) {
-
-            msg.setText(scanner.nextLine());
+            String input = scanner.nextLine();
+            if (Objects.equals(input, "death")){
+            Gson gson = new Gson();
+            DeathNotice deathNotice = new DeathNotice(input, new Date());
+            String jsonInString = gson.toJson(deathNotice);
+            msg.setText(jsonInString);
             prod.send(msg, setTopic);
+            }
+
         }
 
 
