@@ -14,3 +14,4 @@ All other place holders for connection can be found in the same pace as the JCSM
 * For a publishing application 
 Open a terminal of your choosing and run the following command 
                 `java -jar fresh.jar <JCSMP host:port> <message VPN> <username> <password> pub <Name of topic you wish to publish too>`
+The app now listens to userinput of the word "death" which will publish an event of type DeathNotice onto the Topic defined in the arguments passed when running the jar file
